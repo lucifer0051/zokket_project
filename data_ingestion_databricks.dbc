@@ -1,0 +1,31 @@
+# Databricks notebook
+
+from pyspark.sql import SparkSession
+import json
+
+# Initialize Spark session
+spark = SparkSession.builder.appName("ETL_Transformation").getOrCreate()
+
+# Define storage account details
+storage_account_name = "your_account_name"
+storage_account_access_key = "your_account_key"
+container_name = "your_container_name"
+
+# Mount Azure Blob Storage to DBFS
+dbutils.fs.mount(
+  source = f"wasbs://{container_name}@{storage_account_name}.blob.core.windows.net/",
+  mount_point = "/mnt/blob_storage",
+  extra_configs = {f"fs.azure.account.key.{storage_account_name}.blob.core.windows.net": storage_account_access_key}
+)
+
+# Read raw data from Blob Storage
+raw_facebook_ads_df = spark.read.json("/mnt/blob_storage/raw/facebook_ads/*.json")
+raw_google_ads_df = spark.read.json("/mnt/blob_storage/raw/google_ads/*.json")
+
+# Perform transformations
+transformed_facebook_ads_df = raw_facebook_ads_df.selectExpr("id as campaign_id", "name as campaign_name", "status as campaign_status")
+transformed_google_ads_df = raw_google_ads_df.selectExpr("id as campaign_id", "name as campaign_name", "status as campaign_status")
+
+# Write transformed data back to Blob Storage
+transformed_facebook_ads_df.write.mode("overwrite").json("/mnt/blob_storage/transformed/facebook_ads/")
+transformed_google_ads_df.write.mode("overwrite").json("/mnt/blob_storage/transformed/google_ads/")
