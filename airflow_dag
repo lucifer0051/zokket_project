@@ -1,0 +1,48 @@
+from airflow import DAG
+from airflow.operators.python_operator import PythonOperator
+from airflow.providers.microsoft.azure.operators.data_factory import AzureDataFactoryRunPipelineOperator
+from airflow.providers.databricks.operators.databricks import DatabricksSubmitRunOperator
+from airflow.providers.amazon.aws.operators.rds import RdsOperator
+from datetime import datetime, timedelta
+
+default_args = {
+    'owner': 'airflow',
+    'depends_on_past': False,
+    'email_on_failure': False,
+    'email_on_retry': False,
+    'retries': 1,
+    'retry_delay': timedelta(minutes=5),
+}
+
+dag = DAG(
+    'etl_facebook_google_ads_to_rds',
+    default_args=default_args,
+    description='ETL pipeline for Facebook and Google Ads to RDS',
+    schedule_interval=timedelta(days=1),
+    start_date=datetime(2023, 1, 1),
+    catchup=False,
+)
+
+# Define Azure Data Factory pipeline triggers
+start_facebook_ads_pipeline = AzureDataFactoryRunPipelineOperator(
+    task_id='start_facebook_ads_pipeline',
+    azure_data_factory_conn_id='azure_data_factory',
+    pipeline_name='Pipeline_ExtractFacebookAds',
+    resource_group_name='your_resource_group',
+    factory_name='your_factory_name',
+    dag=dag,
+)
+
+start_google_ads_pipeline = AzureDataFactoryRunPipelineOperator(
+    task_id='start_google_ads_pipeline',
+    azure_data_factory_conn_id='azure_data_factory',
+    pipeline_name='Pipeline_ExtractGoogleAds',
+    resource_group_name='your_resource_group',
+    factory_name='your_factory_name',
+    dag=dag,
+)
+
+# Define Databricks job trigger
+databricks_task = DatabricksSubmitRunOperator(
+    task_id='run_databricks_transformation',
+    databricks_conn_id
