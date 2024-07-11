@@ -1,80 +1,9 @@
-<mxfile host="app.diagrams.net" modified="2024-07-11T05:36:56.644Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" version="24.6.4" etag="2-sRNtupExwfDq1ajVe-" type="github">
-  <diagram name="Page-1" id="N5x1d4UzcgwrpOlkiW_S">
+<mxfile host="app.diagrams.net" modified="2024-07-11T05:38:57.703Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" version="24.6.4" etag="TVS3cuj1-fGEP9fgY9jg" type="github">
+  <diagram name="Page-1" id="NubGmSQwUcJUKiB3UR5k">
     <mxGraphModel>
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="2" value="Data Loading" style="whiteSpace=wrap;strokeWidth=2;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="31" y="954" width="437" height="226" as="geometry" />
-        </mxCell>
-        <mxCell id="3" value="Data Storage" style="rhombus;strokeWidth=2;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="66" y="997" width="140" height="140" as="geometry" />
-        </mxCell>
-        <mxCell id="4" value="Data Warehousing" style="rhombus;strokeWidth=2;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="256" y="979" width="176" height="176" as="geometry" />
-        </mxCell>
-        <mxCell id="5" value="Data Transformation" style="whiteSpace=wrap;strokeWidth=2;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="35" y="260" width="401" height="644" as="geometry" />
-        </mxCell>
-        <mxCell id="6" value="Data Cleansing" style="rhombus;strokeWidth=2;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="163" y="285" width="154" height="154" as="geometry" />
-        </mxCell>
-        <mxCell id="7" value="Data Enrichment" style="rhombus;strokeWidth=2;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="156" y="490" width="169" height="169" as="geometry" />
-        </mxCell>
-        <mxCell id="8" value="Data Aggregation" style="rhombus;strokeWidth=2;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="155" y="708" width="171" height="171" as="geometry" />
-        </mxCell>
-        <mxCell id="9" value="Google Ads Source" style="whiteSpace=wrap;strokeWidth=2;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="250" width="230" height="210" as="geometry" />
-        </mxCell>
-        <mxCell id="10" value="Data Extraction" style="rhombus;strokeWidth=2;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="285" y="25" width="160" height="160" as="geometry" />
-        </mxCell>
-        <mxCell id="11" value="Facebook Ads Source" style="whiteSpace=wrap;strokeWidth=2;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry width="230" height="210" as="geometry" />
-        </mxCell>
-        <mxCell id="12" value="Data Extraction" style="rhombus;strokeWidth=2;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="35" y="25" width="160" height="160" as="geometry" />
-        </mxCell>
-        <mxCell id="13" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0;entryY=0.09;" edge="1" parent="1" source="12" target="6">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="115" y="260" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="14" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=1;entryY=0.09;" edge="1" parent="1" source="10" target="6">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="365" y="260" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="15" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="6" target="7">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="16" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="7" target="8">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="17" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.03;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="8" target="3">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="136" y="904" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="18" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.97;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="8" target="4">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="344" y="904" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
